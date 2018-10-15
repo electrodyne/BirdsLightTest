@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BirdLightTest</string>
+    <string name="lago_dash">LAGO-</string>
+    <string name="gen_pass_hint">Place 6-digit code here</string>
+    <string name="gen_pass_btn">Generate Pass.</string>
+
+</resources>
