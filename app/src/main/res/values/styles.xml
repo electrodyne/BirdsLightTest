@@ -6,14 +6,45 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--item name="android:textViewStyle">@style/RobotoTextViewStyle</item-->
+        <item name="buttonStyle">@style/RobotoButtonStyle</item>
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
-    <style name="SpotsDialog" parent="android:Theme.DeviceDefault.Dialog">
+    <!--style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style-->
+
+    <style name="RobotoButtonStyle" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Scan" parent="android:Theme.DeviceDefault.Dialog">
         <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
-        <item name="DialogTitleText">Scanning Network…</item>
+        <item name="DialogTitleText">@string/load_txt</item>
         <item name="DialogSpotColor">@android:color/holo_green_light</item>
         <item name="DialogSpotCount">4</item>
 
     </style>
+
+    <style name="Connect" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">@string/connect_txt</item>
+        <item name="DialogSpotColor">@android:color/holo_green_light</item>
+        <item name="DialogSpotCount">4</item>
+    </style>
+
+    <style name="WaitReceive" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">@string/waitreceive_txt</item>
+        <item name="DialogSpotColor">@android:color/holo_green_light</item>
+        <item name="DialogSpotCount">4</item>
+    </style>
+
+    <!--style name="ExitDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style-->
 
 </resources>

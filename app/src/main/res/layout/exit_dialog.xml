@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg">
+
+    <!--ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/a"
+        android:gravity="center"
+        android:background="#DA5F6A"
+        android:src="@drawable/ic_call_made_black_24dp"
+        android:scaleType="fitCenter" /-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit Birdslight?"
+        android:id="@+id/title_dialog"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp"
+        android:textColor="#ff808080"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to exit Birdslight?"
+        android:id="@+id/message_dialog"
+        android:layout_below="@id/title_dialog"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="18sp"
+        android:textColor="#ff505050"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
+    <!--LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/message_dialog"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/linear1"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/btn_dialog_cancel"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@drawable/button_stroke"
+            android:layout_centerHorizontal="true"
+            android:textColor="#0189ff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Yes   "
+            android:id="@+id/btn_dialog_agree"
+            android:layout_marginLeft="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+
+            android:background="@drawable/button_fill"
+
+            android:textColor="#ffffff" />
+
+
+    </LinearLayout-->
+
+
+
+</RelativeLayout>

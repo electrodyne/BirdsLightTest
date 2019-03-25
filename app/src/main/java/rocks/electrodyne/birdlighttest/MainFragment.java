@@ -17,15 +17,15 @@ public class MainFragment extends Fragment implements Utils.onClickCallback {
 
 
     private String[] dataset = {
-            "Connect to Device",
-            "Send Data to Device",
-            "Receive Data from Device",
+           "Connect to Device",
+         //   "Send Data to Device",
+         //   "Receive Data from Device",
             "Synchronous Transmission"
     };
     private Integer[] images = {
-            R.drawable.ic_speaker_phone_black_24dp,
-            R.drawable.ic_call_made_black_24dp,
-            R.drawable.ic_call_received_black_24dp,
+           R.drawable.ic_speaker_phone_black_24dp,
+        //    R.drawable.ic_call_made_black_24dp,
+        //    R.drawable.ic_call_received_black_24dp,
             R.drawable.ic_import_export_black_24dp
 
     };
@@ -43,7 +43,7 @@ public class MainFragment extends Fragment implements Utils.onClickCallback {
 
 
         //recycler view adapter below
-        mAdapter = new MainViewAdapter(this,dataset,images);
+        mAdapter = new MainViewAdapter(getActivity(),this,dataset,images);
         mRecyclerView.setAdapter(mAdapter);
 
 
@@ -61,17 +61,20 @@ public class MainFragment extends Fragment implements Utils.onClickCallback {
                 fragmentTransaction.replace(R.id.fragment_container, connectFragment);
                 break;
             case 1:
-             //   TransmitFragment transmitFragment = new TransmitFragment();
-             //   fragmentTransaction.replace(R.id.fragment_container, transmitFragment);
+                TransmitFragment transmitFragment = new TransmitFragment();
+                fragmentTransaction.replace(R.id.fragment_container, transmitFragment);
                 break;
+                /*
             case 2:
-             //   ReceiveFragment receiveFragment = new ReceiveFragment();
-             //   fragmentTransaction.replace(R.id.fragment_container, receiveFragment);
+                ReceiveFragment receiveFragment = new ReceiveFragment();
+                fragmentTransaction.replace(R.id.fragment_container, receiveFragment);
                 break;
+
             case 3:
-             //   TranceiveFragment tranceiveFragment = new TranceiveFragment();
-             //   fragmentTransaction.replace(R.id.fragment_container, tranceiveFragment);
+                TranceiveFragment tranceiveFragment = new TranceiveFragment();
+                fragmentTransaction.replace(R.id.fragment_container, tranceiveFragment);
                 break;
+                */
         }
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

@@ -3,5 +3,15 @@
     <string name="lago_dash">LAGO-</string>
     <string name="gen_pass_hint">Place 6-digit code here</string>
     <string name="gen_pass_btn">Generate Pass.</string>
+    <string name="send_basic_a_btn">Send Raw Message!</string>
+    <string name="load_txt">Scanning Network...</string>
+    <string name="connect_txt">Connecting to Network...</string>
+    <string name="waitreceive_txt">Sending...</string>
+    <string name="guide_scan_button">Press to scan Birdslight Dome.</string>
+    <string name="guide_wifi_select">Choose one device to get started.</string>
+    <string name="guide_wifi_no_device_found">Make sure that the device was turned on then scan again.</string>
+    <string name="guide_wifi_hold_wifi_ssid">Hold the button to rename the device.</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

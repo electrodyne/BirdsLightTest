@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_speaker_phone_black_24dp" />
 
-    <TextView
+    <!--TextView
         android:id="@+id/randomTV"
         android:layout_width="51dp"
         android:layout_height="17dp"
@@ -54,7 +54,7 @@
         android:text="@string/gen_pass_btn"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/scanBtn"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" /-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/connect_recycler"

@@ -8,17 +8,26 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import uk.co.deanwild.materialshowcaseview.MaterialShowcaseView;
+
+import static android.content.ContentValues.TAG;
 
 public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHolder> {
     private String[] mDataset;
     private Integer[] mImage;
     private Utils.onClickCallback mCallback;
+    private Activity mActivity;
+    public static int chosenPosition;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView dImage;
@@ -33,10 +42,11 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHo
         }
     }
 
-    public MainViewAdapter(Utils.onClickCallback callback,String[] myDataset, Integer[] myImage){
+    public MainViewAdapter(Activity activity,Utils.onClickCallback callback,String[] myDataset, Integer[] myImage){
         mDataset = myDataset;
         mImage = myImage;
-        mCallback =callback;
+        mCallback = callback;
+        mActivity = activity;
     }
 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -54,12 +64,52 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHo
         holder.dImage.setImageResource(mImage[position]);
 
         //Note: let the main function calling this fill the onclick listener below.
+        //get the position chosen, use keys1 and 2,
+
+        if (QRScanFragment.fromQRScannerFragment == false && QRScanFragment.fromQRScannerFragment2 == true) //&& first time..
+        {
+            //Log.e(TAG, "SHOWCASE!! good!" );
+            if (position == chosenPosition) {
+                new MaterialShowcaseView.Builder(mActivity)
+                        .setTarget(holder.dLayoutParent)
+                        .setDismissOnTargetTouch(false)
+                        .setTargetTouchable(true)
+                        .setDismissText("GOT IT")
+                        .setContentText(mActivity.getString(R.string.guide_wifi_hold_wifi_ssid))
+                        .setDelay(500) // optional but starting animations immediately in onCreate can make them choppy
+                        //         .singleUse(SHOWCASE_ID) // provide a unique ID used to ensure it is only shown once
+                        .withRectangleShape()
+                        .show();
+
+                holder.dLayoutParent.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        //Log.e(TAG, "onLongClick: " ); //continue here..
+                        //Pop a dialog.
+                        //Use dialog fragment...
+                        DialogUtils dialogUtils = new DialogUtils();
+                        dialogUtils.setCancelable(false);
+                        dialogUtils.setLayoutResource(R.layout.ssid_rename_dialog,dialogUtils.getFragmentManager(),"sudo");
+
+                        return false;
+                    }
+                });
+            }
+        }
+
 
         holder.dLayoutParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //uses the fragment callback on the selected option.
-                mCallback.callback(position);
+                if (QRScanFragment.fromQRScannerFragment == false && QRScanFragment.fromQRScannerFragment2 == true)
+                {
+
+                }
+                else {
+                    chosenPosition = position;
+                    mCallback.callback(position);
+                }
 
             }
         });
